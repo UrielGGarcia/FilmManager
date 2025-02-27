@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "4Mj9SBizDCQ=",
+  "dgSpecHash": "ZYEvoaZCBGk=",
   "success": true,
   "projectFilePath": "E:\\FilmManager\\FilmManager\\FilmManager.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Uriel\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
+    "C:\\Users\\Uriel\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.0-preview.1.25080.5\\microsoft.extensions.dependencyinjection.10.0.0-preview.1.25080.5.nupkg.sha512",
+    "C:\\Users\\Uriel\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0-preview.1.25080.5\\microsoft.extensions.dependencyinjection.abstractions.10.0.0-preview.1.25080.5.nupkg.sha512",
+    "C:\\Users\\Uriel\\.nuget\\packages\\wpf-ui\\4.0.1\\wpf-ui.4.0.1.nupkg.sha512",
+    "C:\\Users\\Uriel\\.nuget\\packages\\wpf-ui.abstractions\\4.0.1\\wpf-ui.abstractions.4.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
