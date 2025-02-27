@@ -2,7 +2,7 @@ using Wpf.Ui.Controls;
 
 namespace FilmManager.Core.Services;
 
-public class NavigationService
+public class NavigationService : INavigationService
 {
     private INavigationView? NavigationControl { get; set; }
     
