@@ -5,6 +5,8 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:local="clr-namespace:FilmManager"
                   xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                  xmlns:viewMovie="clr-namespace:FilmManager.ViewMovie"
+                  xmlns:viewPrueba="clr-namespace:FilmManager.ViewPrueba"
                   mc:Ignorable="d"
                   Loaded="MainWindow_OnLoaded"
                   ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -15,7 +17,15 @@
     <Grid>
         <ui:NavigationView x:Name="NavigationView" IsBackButtonVisible="Auto">
             <ui:NavigationView.MenuItems>
-                <ui:NavigationViewItem Content="Home" Icon="Home24"/>
+                <ui:NavigationViewItem Content="Peliculas" Icon="Home24"
+                                       TargetPageType="{x:Type viewMovie:ViewMoviePage}"
+                                       />
+                <ui:NavigationViewItem Content="Rentas" Icon="Home24"
+                                       TargetPageType="{x:Type viewPrueba:ViewPruebaPage}"
+                                       />
+                
+                <ui:NavigationViewItem Content="Usuarios" Icon="Home24"/>
+                
             </ui:NavigationView.MenuItems>
         </ui:NavigationView>
         

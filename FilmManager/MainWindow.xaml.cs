@@ -10,6 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CommunityToolkit.Mvvm.Input;
 using FilmManager.Core.Services;
+using FilmManager.ViewMovie;
 using FilmManager.ViewPrueba;
 using Microsoft.Extensions.DependencyInjection;
 using Wpf.Ui.Controls;
@@ -31,7 +32,7 @@ public partial class MainWindow
 
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
-        NavigationView.Navigate(typeof(ViewPruebaPage));
+        NavigationView.Navigate(typeof(ViewMoviePage));
     }
 
     private void CloseWindow_Click(object sender, RoutedEventArgs e)
