@@ -7,6 +7,8 @@
                  xmlns:viewMovie="clr-namespace:FilmManager.ViewMovie"
                  xmlns:createPrueba="clr-namespace:FilmManager.ViewCreate"
                  xmlns:viewPrueba="clr-namespace:FilmManager.ViewPrueba"
+                 xmlns:viewAct="clr-namespace:FilmManager.ViewUpdate"
+
                  mc:Ignorable="d"
                  Loaded="MainWindow_OnLoaded"
                  ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -29,6 +31,8 @@
                     <ui:NavigationViewItem.MenuItems>
                         <ui:NavigationViewItem Content="Ver Películas" Icon="Add" TargetPageType="{x:Type viewMovie:ViewMoviePage}" />
                         <ui:NavigationViewItem Content="Agregar Películas" Icon="View" TargetPageType="{x:Type createPrueba:ViewCreatePage}" />
+                        <ui:NavigationViewItem Content="Actualizar" Icon="View" TargetPageType="{x:Type viewAct:ViewUpdateMoviePage}" />
+
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
                 
