@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using FilmManager.Core.Services.Navigate;
 using FilmManager.ViewMovie;
+using FilmManager.Welcome;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FilmManager;
@@ -34,14 +35,10 @@ public partial class MainWindow
     private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
     {
         // Navegar a la página inicial
-        NavigationView.Navigate(typeof(ViewMoviePage));
+        NavigationView.Navigate(typeof(WelcomePage));
 
         // Cargar datos después de que la ventana esté lista
         _viewModel.LoadFilms();
     }
-
-    private void CloseWindow_Click(object sender, RoutedEventArgs e)
-    {
-        Close();
-    }
+    
 }

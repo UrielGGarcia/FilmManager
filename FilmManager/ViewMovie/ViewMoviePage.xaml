@@ -18,14 +18,14 @@
         <DataGrid
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            MaxHeight="500"
+            MaxHeight="550"
             MaxWidth="900"
-            MinHeight="500"
+            MinHeight="550"
             MinWidth="900"
             AutoGenerateColumns="True"
+            GridLinesVisibility="All"
             ItemsSource="{Binding Films}" />
-
-
+        
     </Grid>
 
 </Page>

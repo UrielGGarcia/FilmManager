@@ -8,10 +8,10 @@
       mc:Ignorable="d"
       ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
       ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-      Title="ViewCreatePage" Height="550" Width="950">
+      Title="ViewCreatePage" Height="550" Width="960">
         <Grid Margin="15">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <Grid>
+            <Grid Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -19,76 +19,63 @@
 
                 <!-- Columna Izquierda -->
                 <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                    <TextBlock Text="ID Película:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10" IsReadOnly="True"
-                           Text="{Binding CurrentFilm.film_id}"/>
+                    <TextBlock Text="ID Película:" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10"/>
                     
-                    <TextBlock Text="Título:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10"
-                           Text="{Binding CurrentFilm.title}"/>
+                    <TextBlock Text="Título:" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10"/>
                     
-                    <TextBlock Text="Año lanzamiento:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10"
-                           Text="{Binding CurrentFilm.release_year}"/>
+                    <TextBlock Text="Año lanzamiento:" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10"/>
                     
-                    <TextBlock Text="ID Idioma principal:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10"
-                           Text="{Binding CurrentFilm.language_id}"/>
+                    <TextBlock Text="ID Idioma principal:" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10"/>
                     
-                    <TextBlock Text="ID Idioma original:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10"
-                           Text="{Binding CurrentFilm.original_language_id}"/>
+                    <TextBlock Text="ID Idioma original:" Margin="5" Foreground="White" />
+                    <TextBox Margin="0,0,0,10"/>
                 </StackPanel>
 
                 <!-- Columna Derecha -->
                 <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                    <TextBlock Text="Descripción:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10" Height="80" AcceptsReturn="True"
-                           Text="{Binding CurrentFilm.description}"/>
+                    <TextBlock Text="Descripción:" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10" Height="80"/>
                     
                     <UniformGrid Columns="2" Margin="0,10">
                         <StackPanel>
-                            <TextBlock Text="Duración renta (días)"/>
-                            <TextBox Margin="0,5"
-                                   Text="{Binding CurrentFilm.rental_duration}"/>
+                            <TextBlock Text="Duración renta (días)" Foreground="White"/>
+                            <TextBox Margin="0,5"/>
                         </StackPanel>
                         
                         <StackPanel>
-                            <TextBlock Text="Tarifa renta"/>
-                            <TextBox Margin="0,5"
-                                   Text="{Binding CurrentFilm.rental_rate}"/>
+                            <TextBlock Text="Tarifa renta" Foreground="White"/>
+                            <TextBox Margin="5"/>
                         </StackPanel>
                         
                         <StackPanel>
-                            <TextBlock Text="Duración (minutos)"/>
-                            <TextBox Margin="0,5"
-                                   Text="{Binding CurrentFilm.length}"/>
+                            <TextBlock Text="Duración (minutos)" Foreground="White"/>
+                            <TextBox Margin="0,5"/>
                         </StackPanel>
                         
                         <StackPanel>
-                            <TextBlock Text="Costo reemplazo"/>
-                            <TextBox Margin="0,5"
-                                   Text="{Binding CurrentFilm.replacement_cost}"/>
+                            <TextBlock Text="Costo reemplazo" Foreground="White"/>
+                            <TextBox Margin="5"/>
                         </StackPanel>
                     </UniformGrid>
 
-                    <TextBlock Text="Clasificación (ej: PG-13):" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10"
-                           Text="{Binding CurrentFilm.rating}"/>
+                    <TextBlock Text="Clasificación (ej: PG-13):" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10"/>
 
-                    <TextBlock Text="Características especiales:" Margin="0,5"/>
-                    <TextBox Margin="0,0,0,10" Height="60"
-                           Text="{Binding CurrentFilm.special_features}"/>
+                    <TextBlock Text="Características especiales:" Margin="0,5" Foreground="White"/>
+                    <TextBox Margin="0,0,0,10" Height="60"/>
                 </StackPanel>
             </Grid>
         </ScrollViewer>
 
         <Button Content="Crear" 
+                Foreground="White"
                 Width="160" Height="40" 
                 Margin="0,20,0,0" Padding="15,2"
-                VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                Command="{Binding UpdateFilmCommand}"
-                Style="{StaticResource PrimaryButtonStyle}"/>
+                VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
     </Grid>
 
 </Page>
