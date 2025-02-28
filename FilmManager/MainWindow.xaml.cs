@@ -22,8 +22,7 @@ public partial class MainWindow
         _navigationService = App.Current.Services.GetService<INavigationService>() ??
                              throw new InvalidOperationException("NavigationService no está disponible");
         _viewModel = App.Current.Services.GetService<ViewMovieViewModel>() ??
-                     new ViewMovieViewModel(
-                         "Server=192.168.56.20;Port=3306;Database=sakila;User=uriel;Password=uriel.120;SslMode=None;");
+                     new ViewMovieViewModel();
 
         // Configurar la navegación
         _navigationService.SetNavigationControl(NavigationView);

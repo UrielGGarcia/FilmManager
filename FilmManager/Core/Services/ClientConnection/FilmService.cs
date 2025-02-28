@@ -8,9 +8,9 @@ public class FilmService
 {
     private readonly string _connectionString;
 
-    public FilmService(string connectionString)
+    public FilmService()
     {
-        _connectionString = connectionString;
+        _connectionString = "Server=192.168.56.20;Port=3306;Database=sakila;User=uriel;Password=uriel.120;SslMode=None;";
     }
 
     //Metodo para obtener las películas de sakila

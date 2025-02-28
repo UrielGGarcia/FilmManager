@@ -11,15 +11,12 @@ public class ViewMovieViewModel : ObservableObject
     private readonly FilmService _filmService;
 
     // Constructor sin parámetros para XAML
-    public ViewMovieViewModel() : this(
-        "Server=192.168.56.20;Port=3306;Database=sakila;User=uriel;Password=uriel.120;SslMode=None;")
-    {
-    }
+   
 
     // Constructor principal
-    public ViewMovieViewModel(string connectionString)
+    public ViewMovieViewModel()
     {
-        _filmService = new FilmService(connectionString);
+        _filmService = new FilmService();
         Films = new ObservableCollection<Film>();
     }
 
