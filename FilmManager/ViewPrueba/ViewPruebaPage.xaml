@@ -9,22 +9,22 @@
       xmlns:local="clr-namespace:FilmManager.ViewPrueba"
       mc:Ignorable="d"
       Title="ViewPruebaPage" Height="450" Width="800">
-   
+
     <Page.DataContext>
-        <local:ViewPruebaViewModel/>
+        <local:ViewPruebaViewModel />
     </Page.DataContext>
     <Grid>
         <ui:TextBox
             Text="Hola"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
-            
+            VerticalAlignment="Center" />
+
         <ui:Button
             Content="HAZME CLICK"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Margin="100"
-            Command="{Binding SaludoCommand}"/>
-            
+            Command="{Binding SaludoCommand}" />
+
     </Grid>
 </Page>

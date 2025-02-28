@@ -9,9 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-preview.1.25080.5" />
-      <PackageReference Include="WPF-UI" Version="4.0.1" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-preview.1.25080.5"/>
+        <PackageReference Include="MySqlConnector" Version="2.4.0"/>
+        <PackageReference Include="WPF-UI" Version="4.0.1"/>
     </ItemGroup>
 
 </Project>

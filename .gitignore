@@ -42,3 +42,6 @@ FilmManager/obj/**/*.suo
 
 # Excluir paquetes de NuGet descargados
 packages/
+
+# Ignorar archivos de configuración específicos del usuario de Rider/Visual Studio
+FilmManager.sln.DotSettings.user

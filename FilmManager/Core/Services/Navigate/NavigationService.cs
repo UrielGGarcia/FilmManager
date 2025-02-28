@@ -1,11 +1,11 @@
 using Wpf.Ui.Controls;
 
-namespace FilmManager.Core.Services;
+namespace FilmManager.Core.Services.Navigate;
 
 public class NavigationService : INavigationService
 {
     private INavigationView? NavigationControl { get; set; }
-    
+
     public void Navigate(Type pageType)
     {
         NavigationControl?.Navigate(pageType);
