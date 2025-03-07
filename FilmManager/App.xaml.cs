@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using FilmManager.Core.Services.Films;
+using FilmManager.Core.Services.Films.Network;
 using FilmManager.Core.Services.Navigate;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,6 +25,8 @@ public partial class App : Application
         var services = new ServiceCollection();
 
         services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<IFilmService, FilmService>();
+        services.AddSingleton<FilmServiceNetwork>();
 
         return services.BuildServiceProvider();
     }

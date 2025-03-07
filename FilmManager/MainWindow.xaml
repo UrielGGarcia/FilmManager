@@ -31,8 +31,6 @@
                     <ui:NavigationViewItem.MenuItems>
                         <ui:NavigationViewItem Content="Ver Películas" Icon="Add" TargetPageType="{x:Type viewMovie:ViewMoviePage}" />
                         <ui:NavigationViewItem Content="Agregar Películas" Icon="View" TargetPageType="{x:Type createPrueba:ViewCreatePage}" />
-                        <ui:NavigationViewItem Content="Actualizar" Icon="View" TargetPageType="{x:Type viewAct:ViewUpdateMoviePage}" />
-
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
                 

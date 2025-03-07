@@ -29,7 +29,7 @@
                MinWidth="300"
                MaxHeight="300"
                MaxWidth="300"
-               Source="C:\Users\Uriel\OneDrive\Desktop\ARRTTT\FilmManager\FilmManager\Resources\Images\wel_cine.jpg"/>
+               Source="C:\Users\Uriel\OneDrive\Desktop\FilmManager\FilmManager\FilmManager\Resources\Images\wel_cine.jpg"/>
         
         <TextBlock Grid.Row="2" Grid.Column="1" Text="W E L C O M E" Foreground="White" FontSize="50" Grid.ColumnSpan="2"/>
 

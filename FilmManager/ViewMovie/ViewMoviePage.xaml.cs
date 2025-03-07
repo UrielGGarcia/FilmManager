@@ -1,4 +1,6 @@
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FilmManager.ViewMovie;
 
@@ -7,8 +9,12 @@ public partial class ViewMoviePage : Page
     public ViewMoviePage()
     {
         InitializeComponent();
-        var viewModel = new ViewMovieViewModel();
-        DataContext = viewModel;
-        viewModel.LoadFilms();
+        
+    }
+
+    private void Control_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)
+    {
+        var datacontext = DataContext as ViewMovieViewModel;
+        datacontext?.FilmClickCommand.Execute(null);
     }
 }

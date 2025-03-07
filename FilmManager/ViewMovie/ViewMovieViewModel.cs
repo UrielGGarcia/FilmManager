@@ -1,35 +1,47 @@
 using System.Collections.ObjectModel;
 using System.Windows.Data;
 using CommunityToolkit.Mvvm.ComponentModel;
-using FilmManager.Core.Services.ClientConnection;
+using CommunityToolkit.Mvvm.Input;
+using FilmManager.Core.Services.Films;
+using FilmManager.Core.Services.Navigate;
 using FilmManager.Models.Film;
+using FilmManager.ViewUpdate;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FilmManager.ViewMovie;
 
-public class ViewMovieViewModel : ObservableObject
+public partial class ViewMovieViewModel : ObservableObject
+
+
 {
-    private readonly FilmService _filmService;
+    [ObservableProperty] private ObservableCollection<Film> _films;
+    [ObservableProperty] private Film _film;
+    private readonly IFilmService _filmService = App.Current.Services.GetService<IFilmService>()!;
+    private readonly INavigationService _navigationService = App.Current.Services.GetService<INavigationService>()!;
 
-    // Constructor sin parámetros para XAML
-   
-
-    // Constructor principal
     public ViewMovieViewModel()
     {
-        _filmService = new FilmService();
-        Films = new ObservableCollection<Film>();
+        LoadAsync();
+    }
+    
+    
+    private async Task LoadAsync()
+    {
+        Films = await _filmService.GetListaFilms();
     }
 
-    public ObservableCollection<Film> Films { get; set; } = new();
-
-    public async Task LoadFilms()
+    [RelayCommand]
+    private void OnFilmClick()
     {
-        var filmsList = await _filmService.GetFilms();
-        Films.Clear();
-        foreach (var film in filmsList)
+        if (_film != null)
         {
-            Films.Add(film);
-            CollectionViewSource.GetDefaultView(Films)?.Refresh();
+            // Establece el film seleccionado en el servico
+            _filmService.SetFilmSelected(_film);
+            
+            //Navegar a la página de update y eliminación
+            _navigationService.Navigate(typeof(ViewUpdateMoviePage));
         }
     }
+    
+    
 }

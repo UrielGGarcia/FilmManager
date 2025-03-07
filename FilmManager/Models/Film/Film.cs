@@ -1,28 +1,63 @@
+using CommunityToolkit.Mvvm.ComponentModel;
+using Newtonsoft.Json;
+using System;
+
 namespace FilmManager.Models.Film;
+[JsonObject(MemberSerialization.OptIn)]
 
-public class Film
+public partial class Film : ObservableObject
 {
-    public ushort FilmId { get; set; }
-    public string? Title { get; set; }
-    public string? Description { get; set; }
-    public int ReleaseYear { get; set; }
-    public byte LanguageId { get; set; }
-    public byte? OriginalLanguageId { get; set; }
-    public byte RentalDuration { get; set; }
-    public decimal RentalRate { get; set; }
-    public ushort? Length { get; set; }
-    public decimal ReplacementCost { get; set; }
-    public Rating Rating { get; set; }
-    public List<string>? SpecialFeatures { get; set; }
-    public DateTime LastUpdate { get; set; }
-    public byte? CategoryId { get; set; }
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "FilmId")]
+    private ushort _filmId;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "Title")]
+    private string? _title;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "Description")]
+    private string? _description;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "ReleaseYear")]
+    private int _releaseYear;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "LanguageId")]
+    private byte _languageId;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "OriginalLanguageId")]
+    private byte? _originalLanguageId;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "RentalDuration")]
+    private byte _rentalDuration;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "RentalRate")]
+    private decimal _rentalRate;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "Length")]
+    private ushort? _length;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "ReplacementCost")]
+    private decimal _replacementCost;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "Rating")]
+    private string? _rating;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "SpecialFeatures")]
+    private List<string>? _specialFeatures;
+
+    [ObservableProperty]
+    [JsonProperty(PropertyName = "LastUpdate")]
+    private DateTime _lastUpdate;
+    
 }
 
-public enum Rating
-{
-    G,
-    PG,
-    PG_13,
-    R,
-    NC_17 // NC-17 en C#
-}
