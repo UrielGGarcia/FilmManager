@@ -198,7 +198,8 @@
         
         <TextBlock
             Text="Agregar más características especiales"
-            Margin="472,415,0,0"/>
+            Margin="472,340,0,0"
+            Height="30"/>
         
         <ComboBox
             VerticalAlignment="Center"
