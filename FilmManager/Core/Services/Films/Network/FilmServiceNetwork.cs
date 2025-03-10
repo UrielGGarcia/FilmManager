@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
+using System.Windows;
 using FilmManager.Core.Services.Films.Data;
 using FilmManager.Models.Film;
 using Newtonsoft.Json;
@@ -77,4 +78,54 @@ public class FilmServiceNetwork
         }
     }
     
+    
+    // Método para crear
+    public static async Task<bool> AddFilm(Film film)
+    {
+        try
+        {
+            // Serializar el objeto FIlm a Json
+            // Serializar solo las propiedades deseadas 
+            var json = JsonConvert.SerializeObject(new
+            {
+                film.Title,
+                film.ReleaseYear,
+                film.LanguageId,
+                film.Description,
+                film.RentalDuration,
+                film.RentalRate,
+                film.Length,
+                film.ReplacementCost,
+                film.Rating,
+                film.SpecialFeatures
+            });            
+            
+            Console.WriteLine(json);
+            
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            
+            //Solicitud edpoint Post
+            var response = await _client.PostAsync(new Uri($"api/films", UriKind.Relative), content);
+            
+            // Verifica si la solicitud fue exitosa
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                // La respuesta no fue exitosa y mostrará error
+                var errorMessage = await response.Content.ReadAsStringAsync();
+                
+                MessageBox.Show($"Error: {errorMessage}",
+                    "Confirmación",MessageBoxButton.OK,MessageBoxImage.Information);
+                return false;
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error: {ex.Message}",
+                "Confirmación",MessageBoxButton.OK,MessageBoxImage.Information);
+            return false;        }
+    }
 }

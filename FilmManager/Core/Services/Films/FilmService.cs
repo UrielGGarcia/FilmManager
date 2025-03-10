@@ -12,14 +12,9 @@ public class FilmService : IFilmService
 
     private Film? _selectedFilm;
     private bool _filmsTF;
-    private bool _filmsUP;
     private IFilmService _filmServiceImplementation;
     private FilmServiceNetwork? _filmServiceNetwork = App.Current.Services.GetService<FilmServiceNetwork>();
-
-    public void AddFilm(Film film)
-    {
-    }
-
+    
 
     public async Task<ObservableCollection<Film>> RemoveFilm(int filmId)
     {
@@ -51,6 +46,12 @@ public class FilmService : IFilmService
     public void SetFilmSelected(Film film)
     {
         _selectedFilm = film;
+    }
+    
+    public async Task<ObservableCollection<Film>> AddFilm(Film film)
+    {
+        _filmsTF = await FilmServiceNetwork.AddFilm(film);
+        return _films;
     }
     
 }

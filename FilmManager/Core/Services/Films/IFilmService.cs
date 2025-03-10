@@ -5,7 +5,6 @@ namespace FilmManager.Core.Services.Films;
 
 public interface IFilmService
 {
-    void AddFilm(Film film);
     
     Task<ObservableCollection<Film>> GetListaFilms();
     Task<ObservableCollection<Film>> RemoveFilm(int filmId);
@@ -16,5 +15,8 @@ public interface IFilmService
     
     Task<ObservableCollection<Film>> UpdateFilm(Film film);
 
-    
+    Task<ObservableCollection<Film>> AddFilm(Film film);
+
+
+
 }

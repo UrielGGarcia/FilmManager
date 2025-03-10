@@ -210,7 +210,6 @@
             ItemsSource="{Binding AvailableSpecialFeaturesFiltered}" 
             SelectedItem="{Binding SelectedSpecialFeature, Mode=TwoWay}" 
             IsEnabled="{Binding IsTextBoxEnabled}"/>
-            
         
     </Grid>
 </Page>
