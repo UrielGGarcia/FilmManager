@@ -13,7 +13,7 @@
         <local:ViewMovieViewModel />
     </Page.DataContext>
     <Grid>
-        
+
         <DataGrid
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
@@ -22,11 +22,10 @@
             MinHeight="500"
             MinWidth="890"
             AutoGenerateColumns="True"
-            GridLinesVisibility="All" 
+            GridLinesVisibility="All"
             ItemsSource="{Binding Films}"
             SelectedItem="{Binding Film}"
-            MouseDoubleClick="Control_OnMouseDoubleClick"
-            />
+            MouseDoubleClick="Control_OnMouseDoubleClick" />
     </Grid>
 
 </Page>

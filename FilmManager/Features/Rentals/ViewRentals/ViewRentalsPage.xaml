@@ -1,0 +1,57 @@
+<Page x:Class="FilmManager.Features.Rentals.ViewRentals.ViewRentalsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+
+      xmlns:local="clr-namespace:FilmManager.Features.Rentals.ViewRentals"
+      mc:Ignorable="d"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Title="ViewRentalsPage" Height="550" Width="950">
+    <Page.DataContext>
+        <local:ViewRentalsViewModel />
+    </Page.DataContext>
+
+    <Grid>
+        <DataGrid
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0,15,0,0"
+            MaxHeight="450"
+            MaxWidth="890"
+            MinHeight="450"
+            MinWidth="890"
+            AutoGenerateColumns="True"
+            GridLinesVisibility="All"
+            ItemsSource="{Binding Rentals}"
+            SelectedItem="{Binding Rental}" />
+
+        <ui:Button
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Width="70"
+            Height="40"
+            Margin="27,0,0,30"
+            Background="Gainsboro"
+            Foreground="Black"
+            FontSize="25"
+            Icon="{ui:SymbolIcon ArrowPrevious12}"
+            Command="{Binding PreviousPageCommand}"
+            IsEnabled="{Binding IsEnablePrevious}" />
+
+        <ui:Button
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Width="70"
+            Height="40"
+            Margin="852,0,0,30"
+            Background="Gainsboro"
+            Foreground="Black"
+            FontSize="25"
+            Icon="{ui:SymbolIcon ArrowNext12}"
+            Command="{Binding NextPageCommand }"
+            IsEnabled="{Binding IsEnabledNext}" />
+    </Grid>
+</Page>

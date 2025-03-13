@@ -6,8 +6,7 @@
                  xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
                  xmlns:viewMovie="clr-namespace:FilmManager.ViewMovie"
                  xmlns:createPrueba="clr-namespace:FilmManager.ViewCreate"
-                 xmlns:viewPrueba="clr-namespace:FilmManager.ViewPrueba"
-                 xmlns:viewAct="clr-namespace:FilmManager.ViewUpdate"
+                 xmlns:viewRentals="clr-namespace:FilmManager.Features.Rentals.ViewRentals"
 
                  mc:Ignorable="d"
                  Loaded="MainWindow_OnLoaded"
@@ -19,30 +18,32 @@
 
     <Grid>
         <ui:TitleBar Name="TitleBar" />
-        
-        <ui:NavigationView x:Name="NavigationView" 
+
+        <ui:NavigationView x:Name="NavigationView"
                            TitleBar="{Binding ElementName=TitleBar}"
                            IsBackButtonVisible="Auto"
                            PaneDisplayMode="Left"
                            OpenPaneLength="150">
             <ui:NavigationView.MenuItems>
-                
+
                 <ui:NavigationViewItem Content="Peliculas" Icon="Home24">
                     <ui:NavigationViewItem.MenuItems>
-                        <ui:NavigationViewItem Content="Ver Películas" Icon="Add" TargetPageType="{x:Type viewMovie:ViewMoviePage}" />
-                        <ui:NavigationViewItem Content="Agregar Películas" Icon="View" TargetPageType="{x:Type createPrueba:ViewCreatePage}" />
+                        <ui:NavigationViewItem Content="Ver Películas" Icon="Add"
+                                               TargetPageType="{x:Type viewMovie:ViewMoviePage}" />
+                        <ui:NavigationViewItem Content="Agregar Películas" Icon="View"
+                                               TargetPageType="{x:Type createPrueba:ViewCreatePage}" />
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
-                
-                
+
+
                 <ui:NavigationViewItem Content="Rentas" Icon="Home24"
-                                       TargetPageType="{x:Type viewPrueba:ViewPruebaPage}" />
+                                       TargetPageType="{x:Type viewRentals:ViewRentalsPage}" />
 
                 <ui:NavigationViewItem Content="Usuarios" Icon="Home24" />
 
             </ui:NavigationView.MenuItems>
         </ui:NavigationView>
 
-       
+
     </Grid>
 </ui:FluentWindow>

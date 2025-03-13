@@ -3,36 +3,36 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="clr-namespace:FilmManager.Welcome"
       mc:Ignorable="d"
       Background="Black"
       Title="WelcomePage" Height="600" Width="950">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
+
         <Image Grid.Row="1" Grid.Column="3" Grid.RowSpan="3" Grid.ColumnSpan="2" Margin="0,0,40,0"
                MinHeight="300"
                MinWidth="300"
                MaxHeight="300"
                MaxWidth="300"
-               Source="C:\Users\Uriel\OneDrive\Desktop\FilmManager\FilmManager\FilmManager\Resources\Images\wel_cine.jpg"/>
-        
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="W E L C O M E" Foreground="White" FontSize="50" Grid.ColumnSpan="2"/>
+               Source="C:\Users\Uriel\OneDrive\Desktop\FilmManager\FilmManager\FilmManager\Resources\Images\wel_cine.jpg" />
 
-        
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="W E L C O M E" Foreground="White" FontSize="50"
+                   Grid.ColumnSpan="2" />
+
+
     </Grid>
 </Page>

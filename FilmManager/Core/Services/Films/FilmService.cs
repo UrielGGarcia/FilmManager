@@ -8,13 +8,13 @@ namespace FilmManager.Core.Services.Films;
 public class FilmService : IFilmService
 {
     //Declaración de lista vacía
-    private ObservableCollection<Film> _films =  new();
-
-    private Film? _selectedFilm;
-    private bool _filmsTF;
+    private ObservableCollection<Film> _films = new();
     private IFilmService _filmServiceImplementation;
     private FilmServiceNetwork? _filmServiceNetwork = App.Current.Services.GetService<FilmServiceNetwork>();
-    
+    private bool _filmsTF;
+
+    private Film? _selectedFilm;
+
 
     public async Task<ObservableCollection<Film>> RemoveFilm(int filmId)
     {
@@ -27,14 +27,14 @@ public class FilmService : IFilmService
     {
         var index = _films.IndexOf(film);
         if (index != 0) _films[index] = film;
-        
+
         _filmsTF = await FilmServiceNetwork.UpdateFilm(film);
         return _films;
     }
 
     public async Task<ObservableCollection<Film>> GetListaFilms()
     {
-        _films = await FilmServiceNetwork.GetFilms(); 
+        _films = await FilmServiceNetwork.GetFilms();
         return _films;
     }
 
@@ -47,11 +47,10 @@ public class FilmService : IFilmService
     {
         _selectedFilm = film;
     }
-    
+
     public async Task<ObservableCollection<Film>> AddFilm(Film film)
     {
         _filmsTF = await FilmServiceNetwork.AddFilm(film);
         return _films;
     }
-    
 }

@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using FilmManager.Core.Services.Navigate;
-using FilmManager.ViewMovie;
 using FilmManager.Welcome;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,7 +19,7 @@ public partial class MainWindow
         // Obtener servicios desde la configuración de la aplicación
         _navigationService = App.Current.Services.GetService<INavigationService>() ??
                              throw new InvalidOperationException("NavigationService no está disponible");
-        
+
 
         // Configurar la navegación
         _navigationService.SetNavigationControl(NavigationView);
@@ -30,7 +29,5 @@ public partial class MainWindow
     {
         // Navegar a la página inicial
         NavigationView.Navigate(typeof(WelcomePage));
-
     }
-    
 }

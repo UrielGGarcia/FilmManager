@@ -1,4 +1,3 @@
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -9,7 +8,6 @@ public partial class ViewMoviePage : Page
     public ViewMoviePage()
     {
         InitializeComponent();
-        
     }
 
     private void Control_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)

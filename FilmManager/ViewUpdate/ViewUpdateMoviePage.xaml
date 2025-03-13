@@ -9,173 +9,172 @@
       ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
       ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
       Title="Actualizar película" Height="550" Width="950">
-    
+
     <Page.DataContext>
-        <local:ViewUpdateViewModel/>
+        <local:ViewUpdateViewModel />
     </Page.DataContext>
 
     <Grid Margin="15">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
                 <!-- Columna Izquierda -->
-                <StackPanel 
-                    Grid.Column="0" 
+                <StackPanel
+                    Grid.Column="0"
                     Margin="0,0,10,0">
-                    <TextBlock 
-                        Text="ID Película:" 
+                    <TextBlock
+                        Text="ID Película:"
                         Foreground="White"
-                        Margin="0,5"/>
-                    <TextBox 
+                        Margin="0,5" />
+                    <TextBox
                         Margin="0,0,0,10"
                         Text="{Binding Film.FilmId}"
-                        IsEnabled="False"/>
-                    
-                    
-                    <TextBlock 
-                        Text="Título:" 
+                        IsEnabled="False" />
+
+
+                    <TextBlock
+                        Text="Título:"
                         Foreground="White"
-                        Margin="0,5"/>
-                    <TextBox 
+                        Margin="0,5" />
+                    <TextBox
                         Margin="0,0,0,10"
                         Text="{Binding Film.Title}"
-                        IsEnabled="{Binding IsTextBoxEnabled }"/>
-                    
-                    
-                    <TextBlock 
-                        Text="Año lanzamiento:" 
+                        IsEnabled="{Binding IsTextBoxEnabled }" />
+
+
+                    <TextBlock
+                        Text="Año lanzamiento:"
                         Foreground="White"
-                        Margin="0,5"/>
-                    <TextBox 
+                        Margin="0,5" />
+                    <TextBox
                         Margin="0,0,0,10"
                         Text="{Binding Film.ReleaseYear}"
-                        IsEnabled="{Binding IsTextBoxEnabled }"/>
-                    
-                    
-                    <TextBlock 
+                        IsEnabled="{Binding IsTextBoxEnabled }" />
+
+
+                    <TextBlock
                         Foreground="White"
-                        Text="ID Idioma principal:" 
-                        Margin="0,5"/>
-                    <TextBox 
+                        Text="ID Idioma principal:"
+                        Margin="0,5" />
+                    <TextBox
                         Margin="0,0,0,10"
                         Text="{Binding Film.LanguageId}"
-                        IsEnabled="False"/>
-                    
-                    
-                    <TextBlock 
-                        Text="ID Idioma original:" 
+                        IsEnabled="False" />
+
+
+                    <TextBlock
+                        Text="ID Idioma original:"
                         Foreground="White"
-                        Margin="0,5"/>
-                    <TextBox 
+                        Margin="0,5" />
+                    <TextBox
                         Margin="0,0,0,10"
                         Text="{Binding Film.OriginalLanguageId}"
-                        IsEnabled="False"/>
+                        IsEnabled="False" />
                 </StackPanel>
 
-                
+
                 <!-- Columna Derecha -->
-                <StackPanel 
-                    Grid.Column="1" 
+                <StackPanel
+                    Grid.Column="1"
                     Margin="10,0,0,0">
-                    <TextBlock 
+                    <TextBlock
                         Foreground="White"
-                        Text="Descripción:" 
-                        Margin="0,5"/>
-                    <TextBox 
-                        Margin="0,0,0,10" 
+                        Text="Descripción:"
+                        Margin="0,5" />
+                    <TextBox
+                        Margin="0,0,0,10"
                         Height="80"
                         Text="{Binding Film.Description}"
-                        IsEnabled="{Binding IsTextBoxEnabled }"/>
-                    
-                    
-                    <UniformGrid 
-                        Columns="2" 
+                        IsEnabled="{Binding IsTextBoxEnabled }" />
+
+
+                    <UniformGrid
+                        Columns="2"
                         Margin="0,10">
-                        
+
                         <StackPanel>
-                            <TextBlock 
+                            <TextBlock
                                 Foreground="White"
-                                Text="Duración renta (días)"/>
-                            <TextBox 
+                                Text="Duración renta (días)" />
+                            <TextBox
                                 Margin="0,5"
                                 Text="{Binding Film.RentalDuration}"
-                                IsEnabled="{Binding IsTextBoxEnabled }"/>
+                                IsEnabled="{Binding IsTextBoxEnabled }" />
                         </StackPanel>
-                        
+
                         <StackPanel>
-                            <TextBlock 
+                            <TextBlock
                                 Foreground="White"
-                                Text="Tarifa renta"/>
-                            <TextBox 
+                                Text="Tarifa renta" />
+                            <TextBox
                                 Margin="5,5,0,0"
                                 Text="{Binding Film.RentalRate}"
-                                IsEnabled="{Binding IsTextBoxEnabled }"/>
+                                IsEnabled="{Binding IsTextBoxEnabled }" />
                         </StackPanel>
-                        
+
                         <StackPanel>
-                            <TextBlock 
+                            <TextBlock
                                 Foreground="White"
-                                Text="Duración (minutos)"/>
-                            <TextBox 
+                                Text="Duración (minutos)" />
+                            <TextBox
                                 Margin="0,5"
                                 Text="{Binding Film.Length}"
-                                IsEnabled="{Binding IsTextBoxEnabled }"/>
+                                IsEnabled="{Binding IsTextBoxEnabled }" />
                         </StackPanel>
-                        
+
                         <StackPanel>
-                            <TextBlock 
+                            <TextBlock
                                 Foreground="White"
-                                Text="Costo reemplazo"/>
-                            <TextBox 
+                                Text="Costo reemplazo" />
+                            <TextBox
                                 Margin="5,5,0,0"
                                 Text="{Binding Film.ReplacementCost}"
-                                IsEnabled="{Binding IsTextBoxEnabled }"/>
+                                IsEnabled="{Binding IsTextBoxEnabled }" />
                         </StackPanel>
                     </UniformGrid>
 
-                    <TextBlock 
+                    <TextBlock
                         Foreground="White"
-                        Text="Clasificación (ej: PG-13):" 
-                        Margin="0,5"/>
-                    <TextBox 
+                        Text="Clasificación (ej: PG-13):"
+                        Margin="0,5" />
+                    <TextBox
                         Margin="0,0,0,10"
                         Text="{Binding Film.Rating}"
-                        IsEnabled="{Binding IsTextBoxEnabled }"/>
+                        IsEnabled="{Binding IsTextBoxEnabled }" />
 
-                    <TextBlock 
+                    <TextBlock
                         Foreground="White"
-                        Text="Características especiales:" 
-                        Margin="0,5"/>
-                    <TextBox 
-                        Margin="0,0,0,10" 
+                        Text="Características especiales:"
+                        Margin="0,5" />
+                    <TextBox
+                        Margin="0,0,0,10"
                         Height="40"
                         Text="{Binding SpecialFeaturesText}"
-                        IsEnabled="{Binding IsTextBoxEnabled }"
-                        />
-                    
-                    
+                        IsEnabled="{Binding IsTextBoxEnabled }" />
+
+
                 </StackPanel>
             </Grid>
         </ScrollViewer>
 
-        <Button Content="Editar" 
-                Width="100" Height="40" 
-                Margin="50,20,0,95" 
+        <Button Content="Editar"
+                Width="100" Height="40"
+                Margin="50,20,0,95"
                 Padding="15,2"
                 VerticalAlignment="Bottom"
                 Background="Khaki"
                 Foreground="Black"
                 FontStyle="Italic"
                 FontWeight="Medium"
-                Command="{Binding ToggleEditCommand}"/>
-        
-        <Button Content="Actualizar" 
-                Width="100" Height="40" 
-                Margin="250,20,0,95" 
+                Command="{Binding ToggleEditCommand}" />
+
+        <Button Content="Actualizar"
+                Width="100" Height="40"
+                Margin="250,20,0,95"
                 Padding="15,2"
                 VerticalAlignment="Bottom"
                 Background="Aquamarine"
@@ -183,33 +182,33 @@
                 FontStyle="Italic"
                 FontWeight="Medium"
                 Command="{Binding GuardarFilmCommand}"
-                IsEnabled="{Binding IsTextBoxEnabled}"/>
-        
-        <Button Content="Eliminar" 
-                Width="100" Height="40" 
-                Margin="750,20,0,20" 
+                IsEnabled="{Binding IsTextBoxEnabled}" />
+
+        <Button Content="Eliminar"
+                Width="100" Height="40"
+                Margin="750,20,0,20"
                 Padding="15,2"
                 VerticalAlignment="Bottom"
                 Background="DarkRed"
                 Foreground="White"
                 FontStyle="Italic"
                 FontWeight="Medium"
-                Command="{Binding EliminarFilmCommand}"/>
-        
+                Command="{Binding EliminarFilmCommand}" />
+
         <TextBlock
             Text="Agregar más características especiales"
             Margin="472,340,0,0"
-            Height="30"/>
-        
+            Height="30" />
+
         <ComboBox
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Margin="175,400,0,0"
             MinHeight="40"
             MinWidth="150"
-            ItemsSource="{Binding AvailableSpecialFeaturesFiltered}" 
-            SelectedItem="{Binding SelectedSpecialFeature, Mode=TwoWay}" 
-            IsEnabled="{Binding IsTextBoxEnabled}"/>
-        
+            ItemsSource="{Binding AvailableSpecialFeaturesFiltered}"
+            SelectedItem="{Binding SelectedSpecialFeature, Mode=TwoWay}"
+            IsEnabled="{Binding IsTextBoxEnabled}" />
+
     </Grid>
 </Page>
