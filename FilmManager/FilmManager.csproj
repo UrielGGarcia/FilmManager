@@ -18,7 +18,6 @@
 
     <ItemGroup>
         <Folder Include="Features\Rentals\AddRentals\"/>
-        <Folder Include="Features\Rentals\UpdateRentals\"/>
     </ItemGroup>
 
 </Project>
