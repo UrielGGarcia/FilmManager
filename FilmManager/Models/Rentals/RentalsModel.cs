@@ -26,4 +26,7 @@ public partial class RentalsModel : ObservableObject
 
     [ObservableProperty] [JsonProperty(PropertyName = "StaffId")]
     private int _staffId;
+
+    [ObservableProperty] [JsonProperty(PropertyName = "SpecialFeatures")]
+    private List<string>? _specialFeatures;
 }
