@@ -1,0 +1,126 @@
+<Page x:Class="FilmManager.Features.Rentals.UpdateRentals.UpdateRentalPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:updateRentals="clr-namespace:FilmManager.Features.Rentals.UpdateRentals"
+      mc:Ignorable="d"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      Title="Actualizar Alquiler" Height="550" Width="950">
+
+    <Page.DataContext>
+        <updateRentals:ViewUpdateRentalViewModel />
+    </Page.DataContext>
+
+    <Grid Margin="15">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Columna Izquierda -->
+                <StackPanel
+                    Grid.Column="0"
+                    Margin="0,0,10,0">
+                    <TextBlock
+                        Text="Fecha de Alquiler:"
+                        Foreground="White"
+                        Margin="0,5" />
+                    <DatePicker
+                        Margin="0,0,0,10"
+                        SelectedDate="{Binding Rental.RentalDate}"
+                        IsEnabled="{Binding IsTextBoxEnabled}" />
+
+                    <TextBlock
+                        Text="ID Inventario:"
+                        Foreground="White"
+                        Margin="0,5" />
+                    <TextBox
+                        Margin="0,0,0,10"
+                        Text="{Binding Rental.InventoryId}"
+                        IsEnabled="{Binding IsTextBoxEnabled}" />
+
+                    <TextBlock
+                        Text="ID Cliente:"
+                        Foreground="White"
+                        Margin="0,5" />
+                    <TextBox
+                        Margin="0,0,0,10"
+                        Text="{Binding Rental.CustomerId}"
+                        IsEnabled="{Binding IsTextBoxEnabled}" />
+                </StackPanel>
+
+                <!-- Columna Derecha -->
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="10,0,0,0">
+                    <TextBlock
+                        Text="Fecha de Devolución:"
+                        Foreground="White"
+                        Margin="0,5" />
+                    <DatePicker
+                        Margin="0,0,0,10"
+                        SelectedDate="{Binding Rental.ReturnDate}"
+                        IsEnabled="{Binding IsTextBoxEnabled}" />
+
+                    <TextBlock
+                        Text="ID Empleado:"
+                        Foreground="White"
+                        Margin="0,5" />
+                    <TextBox
+                        Margin="0,0,0,10"
+                        Text="{Binding Rental.StaffId}"
+                        IsEnabled="{Binding IsTextBoxEnabled}" />
+
+                    <TextBlock
+                        Text="Última Actualización:"
+                        Foreground="White"
+                        Margin="0,5" />
+                    <TextBox
+                        Margin="0,0,0,10"
+                        Text="{Binding Rental.LastUpdate, StringFormat='dd/MM/yyyy HH:mm:ss'}"
+                        IsEnabled="False" />
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+        <!-- Botones de Acción -->
+        <Button Content="Editar"
+                Width="100" Height="40"
+                Margin="50,20,0,95"
+                Padding="15,2"
+                VerticalAlignment="Bottom"
+                Background="Khaki"
+                Foreground="Black"
+                FontStyle="Italic"
+                FontWeight="Medium"
+                Command="{Binding ToggleEditCommand}" />
+
+        <Button Content="Actualizar"
+                Width="100" Height="40"
+                Margin="250,20,0,95"
+                Padding="15,2"
+                VerticalAlignment="Bottom"
+                Background="Aquamarine"
+                Foreground="Black"
+                FontStyle="Italic"
+                FontWeight="Medium"
+                Command="{Binding GuardarRentalCommand}"
+                IsEnabled="{Binding IsTextBoxEnabled}" />
+
+        <Button Content="Eliminar"
+                Width="100" Height="40"
+                Margin="750,20,0,20"
+                Padding="15,2"
+                VerticalAlignment="Bottom"
+                Background="DarkRed"
+                Foreground="White"
+                FontStyle="Italic"
+                FontWeight="Medium"
+                Command="{Binding EliminarRentalCommand}" />
+    </Grid>
+</Page>

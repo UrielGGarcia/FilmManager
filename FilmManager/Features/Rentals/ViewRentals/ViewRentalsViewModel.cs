@@ -1,8 +1,10 @@
 using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using FilmManager.Core.Services.Navigate;
 using FilmManager.Core.Services.Rentals;
 using FilmManager.Models.Rentals;
+using FilmManager.ViewUpdate;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FilmManager.Features.Rentals.ViewRentals;
@@ -10,6 +12,7 @@ namespace FilmManager.Features.Rentals.ViewRentals;
 public partial class ViewRentalsViewModel : ObservableObject
 {
     private readonly IRentalsService _rentalsService = App.Current.Services.GetService<IRentalsService>()!;
+    private readonly INavigationService _navigationService = App.Current.Services.GetService<INavigationService>()!;
     [ObservableProperty] private int _actuallPage;
     [ObservableProperty] private bool _isEnabledNext;
     [ObservableProperty] private bool _isEnablePrevious;
@@ -74,5 +77,18 @@ public partial class ViewRentalsViewModel : ObservableObject
             IsEnabledNext = false;
         else
             IsEnabledNext = true;
+    }
+    
+    //AGREGAR EL RELAY COMMAND
+    [RelayCommand]
+    private void OnFilmClick()
+    {
+        if (_rental != null)
+        {
+            //Establece la renta seleccionada para el servicio
+            _rentalsService.SetRentalsSelected(_rental);
+            //Navegar a la página update y eliminacióm
+            _navigationService.Navigate(typeof(ViewRentalsPage));
+        }
     }
 }

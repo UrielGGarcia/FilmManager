@@ -26,7 +26,8 @@
             AutoGenerateColumns="True"
             GridLinesVisibility="All"
             ItemsSource="{Binding Rentals}"
-            SelectedItem="{Binding Rental}" />
+            SelectedItem="{Binding Rental}"
+            MouseDoubleClick="Control_OnMouseDoubleClick"/>
 
         <ui:Button
             HorizontalAlignment="Left"

@@ -18,7 +18,7 @@ public partial class ViewUpdateViewModel : ObservableObject
     private string _selectedSpecialFeature;
 
     public ViewUpdateViewModel()
-    {
+    {      
         Film = _filmService.GetFilmSelected();
         _isTextBoxEnabled = false;
     }
