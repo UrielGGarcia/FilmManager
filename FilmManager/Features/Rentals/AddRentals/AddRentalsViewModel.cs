@@ -71,6 +71,17 @@ public partial class AddRentalsViewModel : ObservableObject
             NewRental.LastUpdate = DateTime.Now;
             NewRental.InventoryId = SelectedInventory.InventoryId;
             NewRental.StaffId = staffIdSelected;
+            
+            
+            var result = MessageBox.Show("¿Está seguro que desea guardar la renta creado?",
+                "Confirmación", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
+
+            if (result == MessageBoxResult.OK)
+            {
+                _rentalService.AddRental(NewRental);
+
+                _navigationService.Navigate(typeof(ViewRentalsPage));
+            }
         }
         else
         {
@@ -79,17 +90,6 @@ public partial class AddRentalsViewModel : ObservableObject
         }
 
 
-        var json = JsonConvert.SerializeObject(NewRental);
-        Console.WriteLine(json);
-
-        var result = MessageBox.Show("¿Está seguro que desea guardar la renta creado?",
-            "Confirmación", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
-
-        if (result == MessageBoxResult.OK)
-        {
-            _rentalService.AddRental(NewRental);
-
-            _navigationService.Navigate(typeof(ViewRentalsPage));
-        }
+        
     }
 }

@@ -42,8 +42,6 @@
                     <ui:NavigationViewItem.MenuItems>
                         <ui:NavigationViewItem Content="Ver rentas" Icon="Add"
                                                TargetPageType="{x:Type viewRentals:ViewRentalsPage}" />
-                        <ui:NavigationViewItem Content="Agregar renta" Icon="Add"
-                                               TargetPageType="{x:Type addRentals:AddRentalsPage}" />
                     </ui:NavigationViewItem.MenuItems>
                 </ui:NavigationViewItem>
 

@@ -46,8 +46,7 @@ public partial class ViewUpdateRentalViewModel : ObservableObject
 
             if (result == MessageBoxResult.OK)
             {
-                var json = JsonConvert.SerializeObject(rentalSeleccionado);
-                Console.WriteLine($"JSON enviado: {json}");
+
                 _rentalsService.UpdateRental(rentalSeleccionado);
                 _navigationService.Navigate(typeof(ViewMoviePage));
             }

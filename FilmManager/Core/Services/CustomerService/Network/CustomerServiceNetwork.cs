@@ -14,7 +14,6 @@ public class CustomerServiceNetwork
     {
         var response = await _client.GetAsync("api/customer");
         var responseContent = await response.Content.ReadAsStringAsync();
-        Console.WriteLine(responseContent);
         return JsonConvert.DeserializeObject<ObservableCollection<CustomerModel>>(responseContent) ??
                new ObservableCollection<CustomerModel>();
     }
