@@ -16,8 +16,4 @@
         <PackageReference Include="WPF-UI" Version="4.0.1"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Features\Rentals\AddRentals\"/>
-    </ItemGroup>
-
 </Project>

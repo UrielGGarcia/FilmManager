@@ -41,7 +41,7 @@
                         Foreground="White"
                         Margin="0,5" />
                     <TextBox
-                        Margin="0,0,0,10"   
+                        Margin="0,0,0,10"
                         Text="{Binding Film.Title}"
                         IsEnabled="{Binding IsTextBoxEnabled }" />
 
@@ -172,6 +172,18 @@
                 FontWeight="Medium"
                 Command="{Binding ToggleEditCommand}" />
 
+        <ui:Button Content="Nueva renta"
+                   Icon="{ui:SymbolIcon AddCircle20}"
+                   Width="150" Height="30"
+                   Margin="0,20,0,10"
+                   Padding="15,2"
+                   VerticalAlignment="Bottom"
+                   Background="Teal"
+                   Foreground="Black"
+                   FontStyle="Italic"
+                   FontWeight="Medium"
+                   Command="{Binding AgregarRentaCommand }" />
+
         <Button Content="Actualizar"
                 Width="100" Height="40"
                 Margin="250,20,0,95"
@@ -194,6 +206,7 @@
                 FontStyle="Italic"
                 FontWeight="Medium"
                 Command="{Binding EliminarFilmCommand}" />
+
 
         <TextBlock
             Text="Agregar más características especiales"

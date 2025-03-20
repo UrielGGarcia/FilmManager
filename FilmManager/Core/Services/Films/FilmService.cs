@@ -45,7 +45,7 @@ public class FilmService : IFilmService
 
     public void SetFilmSelected(Film film)
     {
-        _selectedFilm = film;   
+        _selectedFilm = film;
     }
 
     public async Task<ObservableCollection<Film>> AddFilm(Film film)

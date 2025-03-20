@@ -36,7 +36,7 @@ public partial class ViewMovieViewModel : ObservableObject
         {
             // Establece el film seleccionado en el servico
             _filmService.SetFilmSelected(_film);
-        
+
             //Navegar a la página de update y eliminación
             _navigationService.Navigate(typeof(ViewUpdateMoviePage));
         }

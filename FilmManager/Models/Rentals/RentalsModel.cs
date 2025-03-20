@@ -6,27 +6,24 @@ namespace FilmManager.Models.Rentals;
 [JsonObject(MemberSerialization.OptIn)]
 public partial class RentalsModel : ObservableObject
 {
-    [ObservableProperty] [JsonProperty(PropertyName = "RentalId")]
-    private int _rentalId;
-    
-    [ObservableProperty] [JsonProperty(PropertyName = "CustomerId")]
+    [ObservableProperty] [JsonProperty(PropertyName = "customerId")]
     private int _customerId;
 
-    [ObservableProperty] [JsonProperty(PropertyName = "InventoryId")]
+    [ObservableProperty] [JsonProperty(PropertyName = "inventoryId")]
     private int _inventoryId;
 
-    [ObservableProperty] [JsonProperty(PropertyName = "LastUpdate")]
+    [ObservableProperty] [JsonProperty(PropertyName = "lastUpdate")]
     private DateTime _lastUpdate;
 
-    [ObservableProperty] [JsonProperty(PropertyName = "RentalDate")]
-    private DateTime _rentalDate;
+    [ObservableProperty] [JsonProperty(PropertyName = "rentalDate")]
+    private DateTime? _rentalDate;
 
-    [ObservableProperty] [JsonProperty(PropertyName = "ReturnDate")]
+    [ObservableProperty] [JsonProperty(PropertyName = "rentalId")]
+    private int _rentalId;
+
+    [ObservableProperty] [JsonProperty(PropertyName = "returnDate")]
     private DateTime? _returnDate;
 
-    [ObservableProperty] [JsonProperty(PropertyName = "StaffId")]
+    [ObservableProperty] [JsonProperty(PropertyName = "staffId")]
     private int _staffId;
-
-    [ObservableProperty] [JsonProperty(PropertyName = "SpecialFeatures")]
-    private List<string>? _specialFeatures;
 }

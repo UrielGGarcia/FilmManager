@@ -31,11 +31,15 @@ public class FilmServiceNetwork
             if (reponse.IsSuccessStatusCode) return true;
 
             var errorMessage = await reponse.Content.ReadAsStringAsync();
+
+            MessageBox.Show($"Error: {errorMessage}",
+                "Confirmación", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             return false;
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Excepción al eliminar la película:  {ex.Message}");
+            MessageBox.Show($"Error al actualizar la renta con id: {ex.Message}",
+                "Confirmación", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             return false;
         }
     }

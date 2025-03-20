@@ -1,0 +1,109 @@
+<Page x:Class="FilmManager.Features.Rentals.AddRentals.AddRentalsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+
+      xmlns:local="clr-namespace:FilmManager.Features.Rentals.AddRentals"
+      mc:Ignorable="d"
+      Title="AddRentalsPage" Height="550" Width="960"
+      ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+      ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}">
+
+    <Page.DataContext>
+        <local:AddRentalsViewModel />
+    </Page.DataContext>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0">
+            <TextBlock
+                Text="Cliente:"
+                FontSize="20"
+                Foreground="White"
+                Margin="50,50,0,0" />
+            <ComboBox
+                Width="300"
+                Margin="0,0,90,0"
+                ItemsSource="{Binding Customers}"
+                DisplayMemberPath="FullName"
+                Foreground="White"
+                TextSearch.TextPath="FullName"
+                StaysOpenOnEdit="True"
+                IsTextSearchEnabled="True"
+                SelectedItem="{Binding SelectedCustomer }" />
+            <TextBox
+                Width="300"
+                Margin="0,8,90,0"
+                Text="{Binding SelectedCustomer.Email}" />
+            <TextBlock
+                Text="Fecha de renta:"
+                Foreground="White"
+                FontSize="20"
+                Margin="50,50,0,0" />
+            <DatePicker
+                Width="300"
+                Margin="0,5,90,0"
+                Text="{Binding FechaCreacion}" />
+            <TextBlock
+                Text="Fecha de devolución:"
+                Foreground="White"
+                FontSize="20"
+                Margin="50,50,0,0" />
+            <DatePicker
+                Width="300"
+                Margin="0,5,90,0"
+                Text="{Binding FechaRegreso}" />
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock
+                Text="Película:"
+                Foreground="White"
+                FontSize="20"
+                Margin="90,50,0,5" />
+            <TextBox
+                Width="300"
+                Text="{Binding Film.Title}" />
+            <TextBlock
+                Text="Copias disponibles en tienda:"
+                Foreground="White"
+                FontSize="20"
+                Margin="90,50,0,5" />
+            <ComboBox
+                Width="300"
+                ItemsSource="{Binding Inventories}"
+                DisplayMemberPath="CopiasFilm"
+                SelectedItem="{Binding SelectedInventory}" />
+
+            <TextBlock
+                Text="Staff"
+                Foreground="White"
+                FontSize="20"
+                Margin="90,50,0,5" />
+            <ComboBox
+                Width="300"
+                ItemsSource="{Binding StaffList}"
+                SelectedItem="{Binding StaffIdSelected}" />
+
+            <Button
+                Content="G u a r d a r"
+                Foreground="Black"
+                FontWeight="Black"
+                Width="105"
+                Height="50"
+                Margin="290,100,0,0"
+                Background="Aquamarine"
+                Command="{Binding CrearObjetoCommand}" />
+
+        </StackPanel>
+
+    </Grid>
+</Page>

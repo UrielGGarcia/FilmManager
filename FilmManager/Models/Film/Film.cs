@@ -6,9 +6,6 @@ namespace FilmManager.Models.Film;
 [JsonObject(MemberSerialization.OptIn)]
 public partial class Film : ObservableObject
 {
-    [ObservableProperty] [JsonProperty(PropertyName = "Title")]
-    private string? _title;
-    
     [ObservableProperty] [JsonProperty(PropertyName = "Description")]
     private string? _description;
 
@@ -45,5 +42,6 @@ public partial class Film : ObservableObject
     [ObservableProperty] [JsonProperty(PropertyName = "SpecialFeatures")]
     private List<string>? _specialFeatures;
 
-    
+    [ObservableProperty] [JsonProperty(PropertyName = "Title")]
+    private string? _title;
 }

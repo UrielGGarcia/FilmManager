@@ -16,6 +16,7 @@
 
     <Grid>
         <DataGrid
+            Name="DataGrid"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Margin="0,15,0,0"
@@ -26,8 +27,9 @@
             AutoGenerateColumns="True"
             GridLinesVisibility="All"
             ItemsSource="{Binding Rentals}"
-            SelectedItem="{Binding Rental}"
-            MouseDoubleClick="Control_OnMouseDoubleClick"/>
+            SelectedItem="{Binding Rental, Mode=TwoWay}"
+            MouseDoubleClick="Control_OnMouseDoubleClick"
+            IsReadOnly="True" />
 
         <ui:Button
             HorizontalAlignment="Left"

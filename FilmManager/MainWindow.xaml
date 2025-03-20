@@ -7,6 +7,8 @@
                  xmlns:viewMovie="clr-namespace:FilmManager.ViewMovie"
                  xmlns:createPrueba="clr-namespace:FilmManager.ViewCreate"
                  xmlns:viewRentals="clr-namespace:FilmManager.Features.Rentals.ViewRentals"
+                 xmlns:addRentals="clr-namespace:FilmManager.Features.Rentals.AddRentals"
+
 
                  mc:Ignorable="d"
                  Loaded="MainWindow_OnLoaded"
@@ -36,8 +38,14 @@
                 </ui:NavigationViewItem>
 
 
-                <ui:NavigationViewItem Content="Rentas" Icon="Home24"
-                                       TargetPageType="{x:Type viewRentals:ViewRentalsPage}" />
+                <ui:NavigationViewItem Content="Rentas" Icon="Home24">
+                    <ui:NavigationViewItem.MenuItems>
+                        <ui:NavigationViewItem Content="Ver rentas" Icon="Add"
+                                               TargetPageType="{x:Type viewRentals:ViewRentalsPage}" />
+                        <ui:NavigationViewItem Content="Agregar renta" Icon="Add"
+                                               TargetPageType="{x:Type addRentals:AddRentalsPage}" />
+                    </ui:NavigationViewItem.MenuItems>
+                </ui:NavigationViewItem>
 
                 <ui:NavigationViewItem Content="Usuarios" Icon="Home24" />
 

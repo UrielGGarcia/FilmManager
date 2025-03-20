@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FilmManager.Core.Services.Films;
 using FilmManager.Core.Services.Navigate;
+using FilmManager.Features.Rentals.AddRentals;
 using FilmManager.Models.Film;
 using FilmManager.ViewMovie;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,15 +13,16 @@ namespace FilmManager.ViewUpdate;
 public partial class ViewUpdateViewModel : ObservableObject
 {
     private readonly IFilmService _filmService = App.Current.Services.GetService<IFilmService>()!;
-    private readonly INavigationService _navigationService = App.Current.Services.GetService<INavigationService>()!;
+    private readonly INavigationService _navigationService;
     [ObservableProperty] private Film? _film;
     [ObservableProperty] private bool _isTextBoxEnabled;
     private string _selectedSpecialFeature;
 
     public ViewUpdateViewModel()
-    {      
+    {
         Film = _filmService.GetFilmSelected();
         _isTextBoxEnabled = false;
+        _navigationService = App.Current.Services.GetService<INavigationService>()!;
     }
 
     // Agrega lo que ya está agregado en el campo, al combobox
@@ -115,5 +117,11 @@ public partial class ViewUpdateViewModel : ObservableObject
         {
             MessageBox.Show("No se encontro el film.");
         }
+    }
+
+    [RelayCommand]
+    public void OnAgregarRenta()
+    {
+        _navigationService.Navigate(typeof(AddRentalsPage));
     }
 }
